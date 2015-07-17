@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A3D66D2C1B58E700006C7AFF /* TinyJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D66D2B1B58E700006C7AFF /* TinyJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3D66D341B58E854006C7AFF /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D66D331B58E854006C7AFF /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A3D66D281B58E700006C7AFF /* TinyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D66D2B1B58E700006C7AFF /* TinyJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyJSON.h; sourceTree = "<group>"; };
 		A3D66D2D1B58E700006C7AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3D66D331B58E854006C7AFF /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				A3D66D2B1B58E700006C7AFF /* TinyJSON.h */,
 				A3D66D2D1B58E700006C7AFF /* Info.plist */,
+				A3D66D331B58E854006C7AFF /* JSON.swift */,
 			);
 			path = TinyJSON;
 			sourceTree = "<group>";
@@ -90,6 +93,7 @@
 		A3D66D1F1B58E700006C7AFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "肇庆市创威发展有限公司";
 				TargetAttributes = {
@@ -130,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D66D341B58E854006C7AFF /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +233,7 @@
 		A3D66D311B58E700006C7AFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -238,12 +244,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.chinaway.TinyJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A3D66D321B58E700006C7AFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
