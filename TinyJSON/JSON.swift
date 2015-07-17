@@ -53,8 +53,4 @@ extension JSON {
             return "\(v)"
         }
     }
-    
-    public var data: NSData {
-        return string.dataUsingEncoding(NSUTF8StringEncoding)!
-    }
 }
