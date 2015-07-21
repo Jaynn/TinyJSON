@@ -46,7 +46,8 @@ extension JSON {
             }
             return "[\(string)]"
         case let .String(v):
-            return "\"\(v)\""
+            let str = v.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
+            return "\"\(str)\""
         case let .Number(v):
             return "\(v)"
         case let .Bool(v):
