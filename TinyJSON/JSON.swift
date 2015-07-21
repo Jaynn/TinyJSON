@@ -25,7 +25,8 @@ extension JSON {
             if !v.isEmpty {
                 let colon: Character = ":"
                 let comma: Character = ","
-                for (key, value) in v {
+                for (var key, value) in v {
+                    key = key.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
                     string += "\"\(key)\""
                     string.insert(colon, atIndex: string.endIndex)
                     string += value.string
