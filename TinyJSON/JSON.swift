@@ -25,9 +25,8 @@ extension JSON {
             if !v.isEmpty {
                 let colon: Character = ":"
                 let comma: Character = ","
-                for (var key, value) in v {
-                    key = key.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
-                    string += "\"\(key)\""
+                for (key, value) in v {
+                    string += JSON.String(key).string
                     string.insert(colon, atIndex: string.endIndex)
                     string += value.string
                     string.insert(comma, atIndex: string.endIndex)
@@ -47,7 +46,7 @@ extension JSON {
             }
             return "[\(string)]"
         case let .String(v):
-            let str = v.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
+            let str = v.stringByReplacingOccurrencesOfString("\\", withString: "\\\\")
             return "\"\(str)\""
         case let .Number(v):
             return "\(v)"
