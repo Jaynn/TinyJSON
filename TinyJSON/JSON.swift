@@ -28,12 +28,13 @@ extension JSON {
                 let comma: Character = ","
                 for (key, value) in v {
                     if case .Null = value { continue }
+                    if !string.isEmpty {
+                        string.insert(comma, atIndex: string.endIndex)
+                    }
                     string += JSON.String(key).string
                     string.insert(colon, atIndex: string.endIndex)
                     string += value.string
-                    string.insert(comma, atIndex: string.endIndex)
                 }
-                string.removeAtIndex(string.endIndex.predecessor())
             }
             return "{\(string)}"
         case let .Array(v):
