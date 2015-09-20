@@ -15,6 +15,7 @@ public enum JSON {
     case String(Swift.String)
     case Number(NSNumber)
     case Bool(Swift.Bool)
+    case Null
 }
 
 extension JSON {
@@ -26,6 +27,7 @@ extension JSON {
                 let colon: Character = ":"
                 let comma: Character = ","
                 for (key, value) in v {
+                    if case .Null = value { continue }
                     string += JSON.String(key).string
                     string.insert(colon, atIndex: string.endIndex)
                     string += value.string
@@ -52,6 +54,8 @@ extension JSON {
             return "\(v)"
         case let .Bool(v):
             return "\(v)"
+        case .Null:
+            return "null"
         }
     }
 }
