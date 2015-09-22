@@ -49,7 +49,7 @@ extension JSON {
             }
             return "[\(string)]"
         case let .String(v):
-            let str = v.stringByReplacingOccurrencesOfString("\\", withString: "\\\\")
+            let str = v.stringByReplacingOccurrencesOfString("\\", withString: "\\\\").stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
             return "\"\(str)\""
         case let .Number(v):
             return "\(v)"
